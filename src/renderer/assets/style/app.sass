@@ -1,0 +1,182 @@
+$primary-color: rgb(15,22,66)
+$background-color: rgb(43,50,83)
+$text-color: rgb(255,255,255)
+
+$active: linear-gradient(188.54deg, #DE6666 0%, #981B1B 99.2%);
+$logo: #DB2020;
+@import "~@/assets/style/vars.sass"
+
+@font-face 
+  font-family: "Montserrat Regular"
+  src: url("~@/assets/fonts/Montserrat-Regular.ttf") format("truetype")
+
+@font-face 
+  font-family: "Montserrat SemiBold"
+  src: url("~@/assets/fonts/Montserrat-SemiBold.ttf") format("truetype")
+
+html, body
+  overflow: hidden
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  color: $text-color
+  font-family: "Montserrat Regular", sans-serif
+
+input:focus, textarea:focus, select:focus
+  outline: none 
+
+input
+  border: none
+
+#app
+  position: absolute
+  height: 100%
+  width: 100%
+  background-color: $background-color
+  display: flex
+
+  .content
+    width: 100%
+    display: flex
+    flex-direction: column
+    padding: 1.5rem
+
+    .routes
+      display: flex
+      align-items: center
+      margin-bottom: 1rem
+
+      .main
+        font-size: 1.5rem
+        padding-right: 1rem
+        border-right: solid 1px #979797
+
+      .sub
+        margin-top: 3px
+        padding: 0 1em
+        display: flex
+        align-items: center
+        transition: 0.5s
+
+        img
+          height: 50%
+          margin-right: 0.5em
+
+    .header
+      display: flex
+      align-items: center
+      width: 100%
+      background-color: $primary-color
+      border-radius: 0.5em
+      padding: 0.5em 1em
+      font-size: 0.8rem
+      margin-bottom: 1rem
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216) 
+
+      img
+        height: 50%
+
+      .lang
+        padding: 0 1em
+
+      .profile
+        padding-left: 1em
+        display: flex
+        align-items: center
+
+        .text
+          display: flex
+          flex-direction: column
+          align-items: flex-end
+          margin-right: 0.5em
+
+          div
+            white-space: nowrap
+
+        .avatar
+          background: $active
+          height: 2rem
+          width: 2rem
+          border-radius: 50%
+
+
+      input
+        width: 100%
+        border: none
+        background-color: $primary-color
+        font-size: 1.25rem
+        margin-left: 1rem
+
+  .nav
+    width: 20%
+    min-width: 20%
+    height: 100%
+    background-color: $primary-color
+    padding: 1rem
+    display: flex
+    flex-direction: column
+
+    .item
+      width: 100%
+      padding: 0.5rem
+      // margin-bottom: 0.5em
+      display: flex
+      flex-direction: column
+      position: relative
+
+      .label 
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        padding: 0.2em
+        position: relative
+        cursor: default
+
+        img
+          height: 1em
+          transition: 0.3s
+          cursor: pointer
+          margin-right: 0.4em
+          margin-bottom: 0.2em
+        
+        img.opened
+          transform: rotate(180deg)
+
+        img.arrow
+          height: 0.4em
+          position: absolute
+          right: 0
+          top: 0.7em
+          
+
+      .sub-item
+        width: 100%
+        padding: 0.5em
+        margin-top: 0.2em
+        border-radius: 5px
+        // transition: 0.5s
+        cursor: pointer
+        display: flex
+        align-items: center
+
+        img
+          margin-right: 0.5em
+          height: 0.7em
+      
+      .active
+        background: $active
+        box-shadow: -1px 1px 8px rgba(242, 114, 114, 0.578726)
+     
+    .logo
+      color: $logo
+      font-family: "Montserrat SemiBold", sans-serif
+      flex-direction: row
+      align-items: center
+      font-size: 1.2rem
+      cursor: default
+
+      img
+        margin-right: 0.5em
+
